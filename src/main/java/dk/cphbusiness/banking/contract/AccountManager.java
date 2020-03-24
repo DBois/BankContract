@@ -6,7 +6,7 @@ public interface AccountManager {
     AccountDetail getAccount(String number);
     Map<String, AccountSummary> getAccounts(String CPR);
 
-    void transfer(long amount, String targetNumber);
+    MovementManager.MovementDetail transfer(long amount, String sourceNumber, String targetNumber);
 
     public static class AccountIdentifier {
         private final String number;

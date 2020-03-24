@@ -26,9 +26,10 @@ public class AccountManagerTest {
     @Test
     public void testTransfer(){
         assumeThat(AccountManagerHolder.manager, not(nullValue()));
-        var source = AccountManagerHolder.manager.getAccount("0123456789");
+        var sourceNumber = "0123456789";
+        var source = AccountManagerHolder.manager.getAccount(sourceNumber);
         var targetNumber = "001234567";
-        AccountManagerHolder.manager.transfer(10000, targetNumber);
+        AccountManagerHolder.manager.transfer(10000, sourceNumber, targetNumber);
         var target = AccountManagerHolder.manager.getAccount(targetNumber);
         assertEquals(target.getBalance(), 10000);
         assertEquals(source.getBalance(), -10000);
