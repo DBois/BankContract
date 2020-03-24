@@ -1,6 +1,4 @@
-package dk.cphbusiness.banking;
-
-import dk.cphbusiness.banking.CustomerManager;
+package dk.cphbusiness.banking.contract;
 
 public class CustomerManagerHolder {
     public static CustomerManager customerManager;
