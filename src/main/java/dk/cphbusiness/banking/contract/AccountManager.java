@@ -8,14 +8,14 @@ public interface AccountManager {
     void transfer(long amount, String targetNumber);
 
     public static class AccountIdentifier {
-        private final long id;
+        private final String number;
 
-        public AccountIdentifier(long id) {
-            this.id = id;
+        public AccountIdentifier(String number) {
+            this.number = number;
         }
 
-        public long getId() {
-            return id;
+        public String getCpr() {
+            return this.number;
         }
     }
 
@@ -25,15 +25,13 @@ public interface AccountManager {
     public static class AccountDetail extends AccountIdentifier {
         private BankManager.BankSummary bank;
         private CustomerManager.CustomerSummary customer;
-        private String number;
         private long balance;
         private List<MovementManager.MovementDetail> movements;
 
-        public AccountDetail(long id, BankManager.BankSummary bank, CustomerManager.CustomerSummary customer, String number, long balance, List<MovementManager.MovementDetail> movements) {
-            super(id);
+        public AccountDetail(String number, BankManager.BankSummary bank, CustomerManager.CustomerSummary customer, long balance, List<MovementManager.MovementDetail> movements) {
+            super(number);
             this.bank = bank;
             this.customer = customer;
-            this.number = number;
             this.balance = balance;
             this.movements = movements;
         }
@@ -54,13 +52,6 @@ public interface AccountManager {
             this.customer = customer;
         }
 
-        public String getNumber() {
-            return number;
-        }
-
-        public void setNumber(String number) {
-            this.number = number;
-        }
 
         public long getBalance() {
             return balance;
@@ -84,13 +75,11 @@ public interface AccountManager {
      */
     public static class AccountSummary extends AccountIdentifier {
         private BankManager.BankSummary bank;
-        private String number;
         private long balance;
 
-        public AccountSummary(long id, BankManager.BankSummary bank, String number, long balance) {
-            super(id);
+        public AccountSummary(String number, BankManager.BankSummary bank, long balance) {
+            super(number);
             this.bank = bank;
-            this.number = number;
             this.balance = balance;
         }
 
@@ -102,13 +91,6 @@ public interface AccountManager {
             this.bank = bank;
         }
 
-        public String getNumber() {
-            return number;
-        }
-
-        public void setNumber(String number) {
-            this.number = number;
-        }
 
         public long getBalance() {
             return balance;

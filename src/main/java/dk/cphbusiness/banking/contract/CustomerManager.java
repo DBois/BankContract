@@ -7,14 +7,14 @@ public interface CustomerManager {
 
 
     public static class CustomerIdentifier {
-        private final long id;
+        private final String cpr;
 
-        public CustomerIdentifier(long id) {
-            this.id = id;
+        public CustomerIdentifier(String cpr) {
+            this.cpr = cpr;
         }
 
-        public long getId() {
-            return id;
+        public String getCpr() {
+            return cpr;
         }
 
     }
@@ -23,24 +23,15 @@ public interface CustomerManager {
      * Member details
      */
     public static class CustomerDetail extends CustomerIdentifier {
-        private String cpr, name;
+        private String name;
         private BankManager.BankSummary bank;
         private List<String> accountNumbers;
 
-        public CustomerDetail(long id, String cpr, String name, BankManager.BankSummary bank, List<String> accountNumbers) {
-            super(id);
-            this.cpr = cpr;
+        public CustomerDetail(String cpr, String name, BankManager.BankSummary bank, List<String> accountNumbers) {
+            super(cpr);
             this.name = name;
             this.bank = bank;
             this.accountNumbers = accountNumbers;
-        }
-
-        public String getCpr() {
-            return cpr;
-        }
-
-        public void setCpr(String cpr) {
-            this.cpr = cpr;
         }
 
         public String getName() {
@@ -72,22 +63,13 @@ public interface CustomerManager {
      * Member summary
      */
     public static class CustomerSummary extends CustomerIdentifier {
-        private String cpr, name;
+        private String name;
         private BankManager.BankSummary bank;
 
-        public CustomerSummary(long id, String cpr, String name, BankManager.BankSummary bank) {
-            super(id);
-            this.cpr = cpr;
+        public CustomerSummary(String cpr, String name, BankManager.BankSummary bank) {
+            super(cpr);
             this.name = name;
             this.bank = bank;
-        }
-
-        public String getCpr() {
-            return cpr;
-        }
-
-        public void setCpr(String cpr) {
-            this.cpr = cpr;
         }
 
         public String getName() {

@@ -7,14 +7,14 @@ public interface BankManager {
 
 
     public static class BankIdentifier {
-        private final long id;
+        private final String cvr;
 
-        public BankIdentifier(long id) {
-            this.id = id;
+        public BankIdentifier(String cvr) {
+            this.cvr = cvr;
         }
 
-        public long getId() {
-            return id;
+        public String getCvr() {
+            return cvr;
         }
 
     }
@@ -27,8 +27,8 @@ public interface BankManager {
         private Map<String, CustomerManager.CustomerSummary> customers = new HashMap<>();
         private String name;
 
-        public BankDetail(long id, Map<String, AccountManager.AccountSummary> accounts, Map<String, CustomerManager.CustomerSummary> customers, String name) {
-            super(id);
+        public BankDetail(String cvr, Map<String, AccountManager.AccountSummary> accounts, Map<String, CustomerManager.CustomerSummary> customers, String name) {
+            super(cvr);
             this.accounts = accounts;
             this.customers = customers;
             this.name = name;
@@ -65,8 +65,8 @@ public interface BankManager {
     public static class BankSummary extends BankIdentifier {
         private String name;
 
-        public BankSummary(long id, String name) {
-            super(id);
+        public BankSummary(String cvr, String name) {
+            super(cvr);
             this.name = name;
         }
 
