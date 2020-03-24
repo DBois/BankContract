@@ -12,7 +12,7 @@ public class AccountManagerTest {
     @Test
     public void testGetAccount(){
         assumeThat(AccountManagerHolder.manager, not(nullValue()));
-        AccountManager.AccountDetail account = AccountManagerHolder.manager.getAccount("1008956666");
+        AccountManager.AccountDetail account = AccountManagerHolder.manager.getAccount("0123456789");
         assumeThat(account, not(nullValue()));
     }
 
@@ -26,8 +26,8 @@ public class AccountManagerTest {
     @Test
     public void testTransfer(){
         assumeThat(AccountManagerHolder.manager, not(nullValue()));
-        var source = AccountManagerHolder.manager.getAccount("1008956666");
-        var targetNumber = "1008956667";
+        var source = AccountManagerHolder.manager.getAccount("0123456789");
+        var targetNumber = "001234567";
         AccountManagerHolder.manager.transfer(10000, targetNumber);
         var target = AccountManagerHolder.manager.getAccount(targetNumber);
         assertEquals(target.getBalance(), 10000);

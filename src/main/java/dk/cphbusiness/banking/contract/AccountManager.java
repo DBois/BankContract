@@ -1,9 +1,10 @@
 package dk.cphbusiness.banking.contract;
 import java.util.List;
+import java.util.Map;
 
 public interface AccountManager {
     AccountDetail getAccount(String number);
-    List<AccountSummary> getAccounts(String CPR);
+    Map<String, AccountSummary> getAccounts(String CPR);
 
     void transfer(long amount, String targetNumber);
 
