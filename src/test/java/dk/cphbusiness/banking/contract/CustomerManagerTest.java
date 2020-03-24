@@ -13,9 +13,7 @@ public class CustomerManagerTest {
         @Test
         public void testGetCustomer() {
             assumeThat(customerManager, not(nullValue()));
-
-            CustomerDetail customerDetail = customerManager.getCustomer("0101952145");
-
+            CustomerDetail customerDetail = customerManager.getCustomer("0101010001");
             assertThat(customerDetail, not(nullValue()));
         }
 }
