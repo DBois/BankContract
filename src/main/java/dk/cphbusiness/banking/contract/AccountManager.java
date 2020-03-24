@@ -15,7 +15,7 @@ public interface AccountManager {
             this.number = number;
         }
 
-        public String getCpr() {
+        public String getNumber() {
             return this.number;
         }
     }

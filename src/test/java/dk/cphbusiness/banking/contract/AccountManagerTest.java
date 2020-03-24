@@ -12,15 +12,18 @@ public class AccountManagerTest {
     @Test
     public void testGetAccount(){
         assumeThat(AccountManagerHolder.manager, not(nullValue()));
-        AccountManager.AccountDetail account = AccountManagerHolder.manager.getAccount("0123456789");
+        var accountNumber = "0123456789";
+        AccountManager.AccountDetail account = AccountManagerHolder.manager.getAccount(accountNumber);
         assumeThat(account, not(nullValue()));
+        assertEquals("0123456789", account.getNumber());
     }
 
     @Test
     public void testGetAccounts(){
         assumeThat(AccountManagerHolder.manager, not(nullValue()));
-        var accounts = AccountManagerHolder.manager.getAccount("0123456789");
+        var accounts = AccountManagerHolder.manager.getAccounts("1008956666");
         assumeThat(accounts, not(nullValue()));
+        assertEquals(2, accounts.size());
     }
 
     @Test
