@@ -10,8 +10,8 @@ import static org.junit.Assume.assumeThat;
 public class MovementManagerTest {
     @Test
     public void testCreateMovement(){
-        assumeThat(MovementManagerHolder.manager, not(nullValue()));
-        List<MovementManager.MovementDetail> movement = MovementManagerHolder.manager.getMovements("0123456789");
+        assumeThat(MovementManagerHolder.movementManager, not(nullValue()));
+        List<MovementManager.MovementDetail> movement = MovementManagerHolder.movementManager.getMovements("0123456789");
         assumeThat(movement, not(nullValue()));
     }
 }

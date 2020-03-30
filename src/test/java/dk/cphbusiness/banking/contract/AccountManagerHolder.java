@@ -1,5 +1,5 @@
 package dk.cphbusiness.banking.contract;
 
 public class AccountManagerHolder {
-    public static AccountManager manager;
+    public static AccountManager accountManager;
 }
