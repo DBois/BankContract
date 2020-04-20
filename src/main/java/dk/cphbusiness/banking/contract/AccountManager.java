@@ -5,7 +5,7 @@ import java.util.Map;
 public interface AccountManager {
     // TODO: Change Throw exception to custom exceptions
     AccountDetail getAccount(String number) throws Exception;
-    Map<String, AccountSummary> getAccounts(String CPR) throws Exception;
+    List<AccountSummary> getAccountsFromCustomer(String CPR) throws Exception;
     MovementManager.MovementDetail transfer(long amount, String sourceNumber, String targetNumber) throws Exception;
 
     public static class AccountIdentifier {

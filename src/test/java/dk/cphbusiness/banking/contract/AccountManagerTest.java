@@ -21,7 +21,7 @@ public class AccountManagerTest {
     @Test
     public void testGetAccounts() throws Exception {
         assumeThat(AccountManagerHolder.accountManager, not(nullValue()));
-        var accounts = AccountManagerHolder.accountManager.getAccounts("1008956666");
+        var accounts = AccountManagerHolder.accountManager.getAccountsFromCustomer("1008956666");
         assumeThat(accounts, not(nullValue()));
         assertEquals(2, accounts.size());
     }
