@@ -1,9 +1,11 @@
 package dk.cphbusiness.banking.contract;
 
+
 import java.util.List;
 
 public interface MovementManager {
-    List<MovementDetail> getMovements(String accountNumber);
+    // TODO: Change Throw exception to custom exceptions
+    List<MovementDetail> getMovements(String accountNumber) throws Exception;
 
     public static class MovementIdentifier {
         private final long id;

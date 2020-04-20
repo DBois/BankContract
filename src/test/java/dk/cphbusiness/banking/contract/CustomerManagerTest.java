@@ -13,7 +13,7 @@ import static dk.cphbusiness.banking.contract.CustomerManager.*;
 
 public class CustomerManagerTest {
         @Test
-        public void testGetCustomer() {
+        public void testGetCustomer() throws Exception {
             assumeThat(customerManager, not(nullValue()));
             var cpr = "0101010001";
             CustomerDetail customerDetail = customerManager.getCustomer(cpr);

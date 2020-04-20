@@ -10,7 +10,7 @@ import static org.junit.Assume.*;
 public class AccountManagerTest {
 
     @Test
-    public void testGetAccount(){
+    public void testGetAccount() throws Exception {
         assumeThat(AccountManagerHolder.accountManager, not(nullValue()));
         var accountNumber = "0123456789";
         AccountManager.AccountDetail account = AccountManagerHolder.accountManager.getAccount(accountNumber);
@@ -19,7 +19,7 @@ public class AccountManagerTest {
     }
 
     @Test
-    public void testGetAccounts(){
+    public void testGetAccounts() throws Exception {
         assumeThat(AccountManagerHolder.accountManager, not(nullValue()));
         var accounts = AccountManagerHolder.accountManager.getAccounts("1008956666");
         assumeThat(accounts, not(nullValue()));
@@ -27,7 +27,7 @@ public class AccountManagerTest {
     }
 
     @Test
-    public void testTransfer(){
+    public void testTransfer() throws Exception {
         assumeThat(AccountManagerHolder.accountManager, not(nullValue()));
         var sourceNumber = "0123456789";
         var source = AccountManagerHolder.accountManager.getAccount(sourceNumber);

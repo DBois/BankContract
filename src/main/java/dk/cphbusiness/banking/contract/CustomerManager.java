@@ -3,7 +3,8 @@ package dk.cphbusiness.banking.contract;
 import java.util.List;
 
 public interface CustomerManager {
-    CustomerDetail getCustomer(String cpr);
+    // TODO: Change Throw exception to custom exceptions
+    CustomerDetail getCustomer(String cpr) throws Exception;
 
 
     public static class CustomerIdentifier {

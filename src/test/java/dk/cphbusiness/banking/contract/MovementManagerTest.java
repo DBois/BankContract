@@ -9,7 +9,7 @@ import static org.junit.Assume.assumeThat;
 
 public class MovementManagerTest {
     @Test
-    public void testCreateMovement(){
+    public void testCreateMovement() throws Exception {
         assumeThat(MovementManagerHolder.movementManager, not(nullValue()));
         List<MovementManager.MovementDetail> movement = MovementManagerHolder.movementManager.getMovements("0123456789");
         assumeThat(movement, not(nullValue()));
