@@ -25,13 +25,11 @@ public interface CustomerManager {
      */
     public static class CustomerDetail extends CustomerIdentifier {
         private String name;
-        private BankManager.BankSummary bank;
         private List<String> accountNumbers;
 
-        public CustomerDetail(String cpr, String name, BankManager.BankSummary bank, List<String> accountNumbers) {
+        public CustomerDetail(String cpr, String name, List<String> accountNumbers) {
             super(cpr);
             this.name = name;
-            this.bank = bank;
             this.accountNumbers = accountNumbers;
         }
 
@@ -41,14 +39,6 @@ public interface CustomerManager {
 
         public void setName(String name) {
             this.name = name;
-        }
-
-        public BankManager.BankSummary getBank() {
-            return bank;
-        }
-
-        public void setBank(BankManager.BankSummary bank) {
-            this.bank = bank;
         }
 
         public List<String> getAccountNumbers() {
@@ -65,12 +55,10 @@ public interface CustomerManager {
      */
     public static class CustomerSummary extends CustomerIdentifier {
         private String name;
-        private BankManager.BankSummary bank;
 
-        public CustomerSummary(String cpr, String name, BankManager.BankSummary bank) {
+        public CustomerSummary(String cpr, String name) {
             super(cpr);
             this.name = name;
-            this.bank = bank;
         }
 
         public String getName() {
@@ -79,14 +67,6 @@ public interface CustomerManager {
 
         public void setName(String name) {
             this.name = name;
-        }
-
-        public BankManager.BankSummary getBank() {
-            return bank;
-        }
-
-        public void setBank(BankManager.BankSummary bank) {
-            this.bank = bank;
         }
     }
 }
