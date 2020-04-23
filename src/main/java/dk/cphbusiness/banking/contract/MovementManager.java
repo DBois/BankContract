@@ -22,14 +22,14 @@ public interface MovementManager {
 
     /**
      * Member details
-     */
+     **/
     public static class MovementDetail extends MovementIdentifier {
         long time;
         long amount;
-        AccountManager.AccountSummary target;
-        AccountManager.AccountSummary source;
+        String target;
+        String source;
 
-        public MovementDetail(long id, long time, long amount, AccountManager.AccountSummary target, AccountManager.AccountSummary source) {
+        public MovementDetail(long id, long time, long amount, String target, String source) {
             super(id);
             this.time = time;
             this.amount = amount;
@@ -53,19 +53,19 @@ public interface MovementManager {
             this.amount = amount;
         }
 
-        public AccountManager.AccountSummary getTarget() {
+        public String getTarget() {
             return target;
         }
 
-        public void setTarget(AccountManager.AccountSummary target) {
+        public void setTarget(String target) {
             this.target = target;
         }
 
-        public AccountManager.AccountSummary getSource() {
+        public String getSource() {
             return source;
         }
 
-        public void setSource(AccountManager.AccountSummary source) {
+        public void setSource(String source) {
             this.source = source;
         }
     }
